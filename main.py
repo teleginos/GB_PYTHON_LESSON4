@@ -72,6 +72,9 @@ def case2():
 
 
 def case3():
+    print("задача 1 необязательная. Напишите программу, которая получает целое число и возвращает"
+          " его двоичное, восьмеричное строковое представление.")
+
     def convert_to_base(num: int, base: int) -> str:
         conversion = "0123456789ABCDEF"
         result = ''
@@ -94,9 +97,11 @@ def case3():
 
 
 def case4():
+    print("""Даны два многочлена, которые вводит пользователь.Задача - сформировать многочлен, содержащий сумму 
+    многочленов. Степени многочленов могут быть разные.""")
     import sympy as sp
 
-    def add_polynomials(poly1, poly2):
+    def add_polynomials(poly1: str, poly2: str) -> str:
         x = sp.symbols('x')  # Определить символ 'x'
         poly1 = poly1.replace("^", "**")  # Преобразовать степень в Python синтаксис
         poly2 = poly2.replace("^", "**")  # Преобразовать степень в Python синтаксис
@@ -109,9 +114,9 @@ def case4():
 
         return sum_poly
 
-    poly1 = "2*x^2 + 4*x + 5"
-    poly2 = "5*x^3 - 3*x^2 - 12"
-    print(add_polynomials(poly1, poly2))  # Выводит: 5.0*x^3 - x^2 + 4.0*x - 7.0
+    poly1: str = input("Введите первый многочлен(вводите многочлен в виде 5*x^3 - 3*x^2 - 12): ")
+    poly2: str = input("Введите второй многочлен(вводите многочлен в виде 5*x^3 - 3*x^2 - 12): ")
+    print(add_polynomials(poly1, poly2))
 
 
 def default():
